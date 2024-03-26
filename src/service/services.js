@@ -53,8 +53,13 @@ const createProduct = async (req)=>{
         return creates
     }
 }
+// get Products:
+const getProduct = async (req)=>{
+    const datas = await product.find();
+    return datas
+}
 // get Product By Id:
-const getProducts = async (req) =>{
+const getProductById = async (req) =>{
     const id =  req.params.id;
     const findById = await product.findById(id);
     if(!findById){
@@ -68,5 +73,6 @@ module.exports = {
     userLogin,
     createCate,
     createProduct,
-    getProducts
+    getProduct,
+    getProductById
 }

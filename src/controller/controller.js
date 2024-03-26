@@ -31,9 +31,15 @@ const createProduct = async (req,res)=>{
     const datas = await services.createProduct(req);
     res.send(datas);
 }
+
 // get Products:
-const getProduct = async (req,res) =>{
-    const datas = await services.getProducts(req);
+const getProduct = async (req,res)=>{
+    const datas = await services.getProduct(req);
+    res.send(datas)
+}
+// get Products By Id:
+const getProductById = async (req,res) =>{
+    const datas = await services.getProductById(req);
     console.log(datas);
     res.send(datas);
 }
@@ -43,5 +49,6 @@ module.exports = {
     loginUser,
     createCategory,
     createProduct,
-    getProduct
+    getProduct,
+    getProductById
 }

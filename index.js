@@ -12,7 +12,7 @@ app.use('*',cors());
 app.use(cors());
 
 mongoose
-  .connect("mongodb://localhost:27017/fashion2day")
+  .connect("mongodb+srv://jeevamp2398:123@cluster0.jpcwjl8.mongodb.net/fashion2day")
   .then(() => console.log("Connected to DataBase"))
   .catch((err) => console.log(err));
 
@@ -21,7 +21,8 @@ app.post('/user/register',controller.userRegister);
 app.post('/user/login',controller.loginUser);
 app.post('/category',controller.createCategory);
 app.post('/products',controller.createProduct);
-app.get('/get/products/:id',controller.getProduct);
+app.get('/getproducts',controller.getProduct);
+app.get('/getproducts/:id',controller.getProductById);
 
 
 app.listen(port,()=>console.log(`Server run on ${port}`));
